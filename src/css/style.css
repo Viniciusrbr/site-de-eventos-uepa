@@ -1,0 +1,21 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800);
+
+
+body {
+    background: #fff;
+    color: #666;
+    font-family: "Open Sans", sans-serif;
+}
+
+a {
+    color: #5C9110;
+    transition: 0.5s;
+}
+
+a:hover,
+a:active,
+a:focus {
+    color: #9CC495;
+    outline: none;
+    text-decoration: none;
+}

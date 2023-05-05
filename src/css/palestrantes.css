@@ -1,0 +1,47 @@
+#header{
+    z-index: 1;
+}
+
+section{
+    margin-top: 150px;
+}
+
+.palestrantes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.card{
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
+
+.img-fluid{
+    width: 100%;
+    height: 100%;
+}
+
+.titulo{
+    text-transform: uppercase;
+    margin-top: -110px;
+}
+
+.card-text a{
+    color: #0dbef4;
+    text-decoration: none;
+}
+
+.card-text a:hover{
+    color: #3d6e7d;
+    text-decoration: none;
+}
+
+h5{
+    color: black;
+}

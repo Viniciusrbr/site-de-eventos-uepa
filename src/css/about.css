@@ -1,0 +1,52 @@
+.section-title {
+    font-size: 32px;
+    color: #111;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+}
+
+.section-description {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title-divider {
+    width: 80px;
+    height: 3px;
+    background: #5C9110;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+#sobre {
+    background: #fff;
+    padding: 80px 0;
+}
+
+#sobre .about-img {
+    overflow: hidden;
+}
+
+#sobre .about-img img {
+    max-width: 100%;
+}
+
+#sobre .about-content {
+    background: #fff;
+}
+
+#sobre .about-title {
+    color: #333;
+    font-weight: 700;
+    font-size: 28px;
+}
+
+#sobre .about-text {
+    line-height: 26px;
+    margin-bottom: 15px;
+}
+
+#sobre .about-text:last-child {
+    margin-bottom: 0;
+}

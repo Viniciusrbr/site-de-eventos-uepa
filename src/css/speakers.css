@@ -1,0 +1,47 @@
+#palestrantes {
+    background: #fff;
+    padding: 80px 0 60px 0;
+}
+
+#palestrantes .member {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#palestrantes .member .pic {
+    margin-bottom: 15px;
+    overflow: hidden;
+    height: 260px;
+}
+
+#palestrantes .member .pic img {
+    max-width: 100%;
+}
+
+#palestrantes .member h4 {
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+#palestrantes .member span {
+    font-style: italic;
+    display: block;
+    font-size: 13px;
+}
+
+#palestrantes .member .social {
+    margin-top: 15px;
+}
+
+#palestrantes .member .social a {
+    color: #b3b3b3;
+}
+
+#palestrantes .member .social a:hover {
+    color: #5C9110;
+}
+
+#palestrantes .member .social i {
+    font-size: 18px;
+    margin: 0 2px;
+}
