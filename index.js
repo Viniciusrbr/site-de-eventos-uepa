@@ -35,7 +35,6 @@ app.post('/inscricoes', function (req, res) {
         modalidade: req.body.modalidade
     }).then(function () {
         res.sendFile(path.join(__dirname, 'src', 'index.html'));
-        
     }).catch(function (erro) {
         res.send('Erro: Inscrição não realizada com sucesso!' + erro);
     });

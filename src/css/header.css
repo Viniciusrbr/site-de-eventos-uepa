@@ -28,6 +28,11 @@ a:hover {
     align-items: center;
     justify-content: space-between;
     background: #1e440a;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
 }
 
 #menu {

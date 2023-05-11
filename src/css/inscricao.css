@@ -5,9 +5,10 @@ body{
     background-attachment: fixed;
     background-position: center;
 }
+
 form {
     max-width: 600px;
-    margin: 40px auto;
+    margin: 90px auto;
     padding: 20px;
     background-color: #f2f2f2;
     border-radius: 5px;
