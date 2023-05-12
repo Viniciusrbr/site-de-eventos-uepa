@@ -42,5 +42,5 @@ app.post('/inscricoes', function (req, res) {
 });
 
 app.listen(8081, function () {
-    console.log('Servidor Rodando');
+    console.log('Servidor Rodando na porta 8081');
 });

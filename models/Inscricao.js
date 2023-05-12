@@ -1,6 +1,6 @@
 const db = require('./db')
 
-const Post = db.sequelize.define('inscricao', {
+const Post = db.sequelize.define('inscritos', {
     nome: {
         type: db.Sequelize.STRING
     },

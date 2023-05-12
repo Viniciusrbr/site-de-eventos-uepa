@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 
 // Config - conexao com o bd sql 
-const sequelize = new Sequelize('postagens', 'root', '1234admin', {
+const sequelize = new Sequelize('inscricoes_evento', 'root', '1234admin', {
     host: "localhost",
     dialect: 'mysql'
 });
