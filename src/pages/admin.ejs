@@ -16,8 +16,28 @@
     <h1>Informações do Evento</h1>
 
     <h2>Informações Atuais:</h2>
+    <ul>
+        <% informacoes.forEach(function(informacao) { %>
+            <li>
+                Nome: <%= informacao.titulo %>
+            </li>
+            <li>
+                Descrição: <%= informacao.descricao %>
+            </li>
+            <li>
+                Local: <%= informacao.local %>
+            </li>
+            <li>
+                Data de Inicio: <%= informacao.data_inicio %>
+            </li>
+            <li>
+                Data de Termino: <%= informacao.data_fim %>
+            </li>
+            <% }) %>
+    </ul>
 
-    <form id="formulario" action="/adminAtualizar/1" method="put">
+
+    <form id="formulario" action="" method="post">
         <h2>Atualizar Informações:</h2>
 
         <label for="titulo">Nome do evento:</label>
@@ -34,8 +54,6 @@
 
         <label for="data_fim">Data de Termino:</label>
         <input type="date" id="data_fim" name="data_fim">
-
-
 
         <button type="submit">Atualizar</button>
     </form>
