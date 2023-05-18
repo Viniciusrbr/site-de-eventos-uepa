@@ -19,3 +19,28 @@ a:focus {
     outline: none;
     text-decoration: none;
 }
+
+/* LOCAL E DATA */
+
+.Localização{
+    background-color: #1e440a;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.local-e-data{
+    background-color: #1e440a;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.data-info button{
+    background: #5C9110;
+    border: 2px solid #5C9110;
+    color: #fff;
+}

@@ -1,6 +1,5 @@
 const express = require('express');
 const app = express();
-const handlebars = require('express-handlebars');
 const bodyParser = require('body-parser');
 const Post = require('./models/Inscricao');
 const path = require('path');
@@ -8,9 +7,6 @@ const path = require('path');
 // Servir arquivos estáticos a partir do diretório 'public'
 app.use(express.static(path.join(__dirname, 'src')));
 
-// Config - template engine
-app.engine('handlebars', handlebars.engine({ defaultLayout: 'main' }));
-app.set('view engine', 'handlebars');
 
 // Config - body parser
 app.use(bodyParser.urlencoded({ extended: false }));
