@@ -40,7 +40,7 @@
                 <span id="hamburger"></span>
             </button>
             <ul id="menu" role="menu">
-                <li><a href="index.html">Inicio</a></li>
+                <li><a href="/">Inicio</a></li>
                 <li><a href="#sobre">Sobre</a></li>
                 <li><a href="programacao.html">Programação</a></li>
                 <li><a href="palestrantes.html">Palestrantes</a></li>
@@ -55,14 +55,155 @@
     <section id="hero">
         <div class="hero-container">
             <div>
-                <h1>OLA! BEM VINDO AO <%= informacao.titulo %></h1>
-                <h2><%= informacao.descricao %></h2>
+                <h1>OLA! BEM VINDO AO <%= informacao.titulo %>
+                </h1>
+                <h2>
+                    <%= informacao.descricao %>
+                </h2>
                 <div class="actions">
                     <a href="#sobre" class="btn-get-started">Saiba mais</a>
                     <a href="inscricao.html" class="btn-services">Inscreva-se</a>
                 </div>
             </div>
         </div>
+    </section>
+
+    <!-- Ultimas noticias -->
+    <section id="focus" class="focus-section">
+        <div class="container-lg py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3 class="section-title">
+                            ultimas noticias
+                        </h3>
+                        <div class="section-title-divider"></div>
+                        <!-- <p class="section-description">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et
+                            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                        </p> -->
+    
+                    </div>
+                </div>
+            </div>
+
+            <!-- CARDS -->
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+
+                <div class="col">
+                    <div class="card shadow-sm h-100">
+                        <div class="card-image">
+                            <div class="hover-text">
+                                <img src="https://source.unsplash.com/user/xteemu/800x600" class="card-img-top"
+                                    alt="...">
+                                <div class="bottom-right-tag text-uppercase"><a href="">#lorem</a></div>
+                            </div>
+                            <div class="image-overlay"></div>
+                        </div>
+                        <div class="card-body">
+
+                            <h3 class="card-title">Lorem ipsum, dolor sit amet consectetur adipisicing elit</h3>
+                            <div class="text-left my-2">
+                                <div class="sub-cat text-truncate"><span
+                                        class="badge rounded-pill bg-category text-uppercase">topic</span> <a
+                                        href="#">Lorem ipsum dolor sit amet</a></div>
+                            </div>
+                            <p class="card-text">This is a longer card with supporting text below as a natural
+                                lead-in
+                                to
+                                additional content. This content is a little bit longer. This is a longer card
+                                with
+                                supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+
+
+                        </div>
+
+                        <div class="card-footer py-3">
+                            <div class="card-footer__info">
+                                <span><i class="far fa-calendar-alt"></i> 01/04/2021</span>
+            
+                                    <button type="button" class="btn btn-success"><a href="programacao.html">Saiba mais</a></button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card shadow-sm h-100">
+
+                        <div class="card-image">
+                            <img src="https://source.unsplash.com/user/amadorloureiroblanco/800x600"
+                                class="card-img-top" alt="...">
+                            <div class="image-overlay"></div>
+                        </div>
+
+
+                        <div class="card-body">
+                            <h3 class="card-title">Lorem ipsum, dolor sit amet consectetur adipisicing elit</h3>
+                            <div class="text-left my-2">
+                                <div class="sub-cat text-truncate"><span
+                                        class="badge rounded-pill bg-category text-uppercase">topic</span> <a
+                                        href="#">News</a></div>
+                            </div>
+                            <p class="card-text">This is a longer card with supporting text below as a natural
+                                lead-in
+                                to
+                                additional content. This content is a little bit longer. This is a longer card
+                                with
+                                supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+
+                        </div>
+                        <div class="card-footer py-3">
+                            <div class="card-footer__info">
+                                <span>01/04/2021</span>
+                                <button type="button" class="btn btn-success"><a href="programacao.html">Saiba mais</a></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card shadow-sm h-100">
+
+                        <div class="text-img-over">
+                            <img src="https://source.unsplash.com/user/austindistel/800x600" class="card-img-top"
+                                alt="...">
+                            <div class="overlay">
+                                <div class="social-hover"><a href="#"><i class="fas fa-share-alt"></i></a></div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="card-body">
+                            <h3 class="card-title">Lorem ipsum, dolor sit amet consectetur adipisicing elit</h3>
+                            <p class="card-text">This is a longer card with supporting text below as a natural
+                                lead-in
+                                to
+                                additional content. This content is a little bit longer. This is a longer card
+                                with
+                                supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+
+                        </div>
+
+                        <div class="card-footer py-3">
+                            <div class="card-footer__info">
+                                <span>01/04/2021</span>
+                                <button type="button" class="btn btn-success"><a href="programacao.html">Saiba mais</a></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
     </section>
 
     <!-- Sobre o evento -->
@@ -91,14 +232,9 @@
                 </div>
                 <div class="col-lg-6 about-content">
                     <h2 class="about-text">Um evento inedito!</h2>
-                    <p class="about-text">A cidade de Belém está prestes a sediar um evento inédito na região
-                        amazônica: a Primeira Conferência de Inovação e Tecnologia da Região Amazônica, que acontecerá
-                        dos dias 8 a 12 de setembro. Com a participação de renomados palestrantes e profissionais do
-                        setor de tecnologia, a conferência visa fomentar o desenvolvimento de soluções tecnológicas que
-                        promovam o desenvolvimento sustentável da região, o evento reforça a importância da tecnologia
-                        como
-                        ferramenta para o progresso econômico e social da região. Não perca a oportunidade de
-                        participar!</p>
+                    <p class="about-text">
+                        <%= informacao.descricao %>
+                    </p>
                     <p class="about-text"></p>
                 </div>
             </div>
@@ -122,7 +258,9 @@
                 <div class="col-md-6 local-e-data">
                     <div class="local-info">
                         <h2>LOCAL</h2>
-                        <h4>Hangar Centro de Convenções & Feiras da Amazônia</h4>
+                        <h4>
+                            <%= informacao.local %>
+                        </h4>
                         <h5>Av. Dr. Freitas, s/n - Marco, Belém - PA, 66613-902</h5>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut id inventore numquam at nihil
                             quidem impedit, vel natus quis aliquam enim optio doloremque aliquid sequi molestiae
@@ -130,10 +268,15 @@
                     </div>
                     <div class="data-info">
                         <h2>DATA</h2>
-                        <h4>8 a 12 de Setembro</h4>
+                        <h4>De <%= informacao.data_inicio.toLocaleDateString('pt-br', { month: 'long' , day: 'numeric'
+                                }) %> à <%= informacao.data_fim.toLocaleDateString('pt-br', { month: 'long' ,
+                                    day: 'numeric' , year: 'numeric' }) %>
+                        </h4>
+
                         <h5>Das 8h às 18h</h5>
-                        
-                        <button type="button" class="btn btn-success"><a href="programacao.html">Vejá a programação completa de todos os dias</a></button>
+
+                        <button type="button" class="btn btn-success"><a href="programacao.html">Vejá a programação
+                                completa de todos os dias</a></button>
                     </div>
                 </div>
 
@@ -236,6 +379,8 @@
 
         <!-- JavaScript navbar-->
         <script src="javascript/navbar.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
 </body>
 
 </html>

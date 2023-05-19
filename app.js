@@ -9,7 +9,7 @@ const path = require('path');
 
 app.set('view engine', 'ejs')
 // mudando a pasta padrao das views
-app.set('views', path.join(__dirname, 'src', 'pages'));
+app.set('views', path.join(__dirname, 'src'));
 
 // Servir arquivos estáticos a partir do diretório 'public'
 app.use(express.static(path.join(__dirname, 'src')));
@@ -20,7 +20,9 @@ app.use(bodyParser.json());
 
 // Rotas
 app.get('/', function (req, res) {
-    res.sendFile(path.join(__dirname, 'src', 'index.html'));
+    Info.findByPk(1).then(function (informacao) {
+        res.render('index', { informacao: informacao });
+    });
 });
 
 app.get('/inscrever', function (req, res) {
