@@ -1,79 +1,31 @@
+// Importe as dependências
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
-
-const Post = require('./models/Inscricao');
-const Info = require('./models/informacoes');
-
 const path = require('path');
 
-app.set('view engine', 'ejs')
-// mudando a pasta padrao das views
-app.set('views', path.join(__dirname, 'src'));
+// Importe as rotas
+const routes = require('./routes/index');
 
-// Servir arquivos estáticos a partir do diretório 'public'
-app.use(express.static(path.join(__dirname, 'src')));
+// Configurações
+app.set('view engine', 'ejs');
 
-// Config - body parser
+app.set('views', path.join(__dirname, 'views')); // paginas ejs e html
+app.use(express.static(path.join(__dirname, 'public'))); // css, js, imagens
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-// Rotas
-app.get('/', function (req, res) {
-    Info.findByPk(1).then(function (informacao) {
-        res.render('index', { informacao: informacao });
-    });
+// Middleware para definir o tipo MIME correto para arquivos CSS
+app.use('/css', function (req, res, next) {
+  res.setHeader('Content-Type', 'text/css');
+  next();
 });
 
-app.get('/inscrever', function (req, res) {
-    res.sendFile(path.join(__dirname, 'src', 'inscricao.html'));
-});
+// Registre as rotas
+app.use('/', routes);
 
-app.post('/inscricoes', function (req, res) {
-
-    Post.create({
-        nome: req.body.nome,
-        cracha: req.body.cracha,
-        cpf: req.body.cpf,
-        email: req.body.email,
-        modalidade: req.body.modalidade
-    }).then(function () {
-        res.sendFile(path.join(__dirname, 'src', 'index.html'));
-    }).catch(function (erro) {
-        res.send('Erro: Inscrição não realizada com sucesso!' + erro);
-    });
-
-});
-
-/* admin page config */
-app.get('/admin', function (req, res) {
-    Info.findAll().then(function (informacoes) {
-        res.render('admin', { informacoes: informacoes });
-    });
-});
-
-app.post('/admin', function (req, res) {
-    // Obtenha os dados enviados pelo formulário
-    var titulo = req.body.titulo;
-    var descricao = req.body.descricao;
-    var local = req.body.local;
-    var data_inicio = req.body.data_inicio;
-    var data_fim = req.body.data_fim;
-
-    // Atualize as informações no banco de dados
-    Info.findByPk(1).then(function (informacao) {
-        informacao.update({
-            titulo: titulo,
-            descricao: descricao,
-            local: local,
-            data_inicio: data_inicio,
-            data_fim: data_fim
-        }).then(function () {
-            res.redirect('/admin'); // Redirecione de volta à página admin após a atualização
-        });
-    });
-});
-
+// Inicie o servidor
 app.listen(8081, function () {
-    console.log('Servidor Rodando na porta 8081');
+  console.log('Servidor Rodando na porta 8081');
 });
