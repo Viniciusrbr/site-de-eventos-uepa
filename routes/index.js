@@ -82,4 +82,16 @@ router.get('/inscricao.html', function (req, res) {
   res.sendFile(path.join(__dirname, '../views/pages', 'inscricao.html'));
 });
 
+// Rota '/artigos'
+router.get('/artigos.html', function (req, res) {
+  res.sendFile(path.join(__dirname, '../views/pages', 'artigos.html'));
+});
+
+// Rota '/noticias'
+router.get('/noticias.html', function (req, res) {
+  res.sendFile(path.join(__dirname, '../views/pages', 'noticias.html'));
+});
+
+
+
 module.exports = router;
