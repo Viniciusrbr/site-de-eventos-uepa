@@ -3,6 +3,7 @@ const router = express.Router();
 const path = require('path');
 const Post = require('../models/Inscricao');
 const Info = require('../models/informacoes');
+const artigo = require('../models/artigos');
 
 // Rota '/'
 router.get('/', function (req, res) {
@@ -26,10 +27,34 @@ router.post('/inscricoes', function (req, res) {
     modalidade: req.body.modalidade
   })
     .then(function () {
-      res.sendFile(path.join(__dirname, '.../views/pages', 'index.html'));
+      res.redirect('/');
     })
     .catch(function (erro) {
       res.send('Erro: Inscrição não realizada com sucesso!' + erro);
+    });
+});
+
+// Rota '/artigos'
+router.get('/artigos.html', function (req, res) {
+  res.sendFile(path.join(__dirname, '../views/pages', 'artigos.html'));
+});
+
+router.post('/artigosenviados', function (req, res) {
+
+  artigo.create({
+    titulo: req.body.titulo,
+    resumo: req.body.resumo,
+    palavras_chave: req.body.palavras_chave,
+    autores: req.body.autores,
+    afiliacao: req.body.afiliacao,
+    categoria: req.body.categoria,
+    arquivo: req.body.arquivo
+  })
+    .then(function () {
+      res.redirect('/');
+    })
+    .catch(function (erro) {
+      res.send('Erro: Artigo não cadastrado com sucesso!' + erro);
     });
 });
 
@@ -82,10 +107,7 @@ router.get('/inscricao.html', function (req, res) {
   res.sendFile(path.join(__dirname, '../views/pages', 'inscricao.html'));
 });
 
-// Rota '/artigos'
-router.get('/artigos.html', function (req, res) {
-  res.sendFile(path.join(__dirname, '../views/pages', 'artigos.html'));
-});
+
 
 // Rota '/noticias'
 router.get('/noticias.html', function (req, res) {
