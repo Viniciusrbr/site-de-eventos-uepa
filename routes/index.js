@@ -4,6 +4,7 @@ const path = require('path');
 const Post = require('../models/Inscricao');
 const Info = require('../models/informacoes');
 const artigo = require('../models/artigos');
+const Curso = require('../models/cursos');
 
 // Rota '/'
 router.get('/', function (req, res) {
@@ -12,9 +13,11 @@ router.get('/', function (req, res) {
   });
 });
 
-// Rota '/inscrever'
-router.get('/inscrever', function (req, res) {
-  res.sendFile(path.join(__dirname, '../views/pages', 'inscricao.html'));
+// Rota '/inscricao'
+router.get('/inscricao', function (req, res) {
+  Curso.findAll().then(function (cursos) {
+    res.render('pages/inscricao', { cursos: cursos });
+  });
 });
 
 // Rota '/inscricoes'
@@ -102,18 +105,10 @@ router.get('/palestrantes.html', function (req, res) {
   res.sendFile(path.join(__dirname, '../views/pages', 'palestrantes.html'));
 });
 
-// Rota '/inscricao'
-router.get('/inscricao.html', function (req, res) {
-  res.sendFile(path.join(__dirname, '../views/pages', 'inscricao.html'));
-});
-
-
-
 // Rota '/noticias'
 router.get('/noticias.html', function (req, res) {
   res.sendFile(path.join(__dirname, '../views/pages', 'noticias.html'));
 });
-
 
 
 module.exports = router;

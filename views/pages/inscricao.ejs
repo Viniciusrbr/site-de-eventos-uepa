@@ -63,28 +63,23 @@
             <option value="estudante">Estudante</option>
         </select>
 
-        <!-- 
-
-        <label for="comprovante" id="labelComprovante" style="display:none;">Enviar comprovante de vínculo
-            acadêmico:</label>
-        <input type="file" id="comprovante" name="comprovante" style="display:none;">
-
         <label for="curso">Cursos:</label>
         <select id="curso" name="curso">
             <option selected>Selecione o(os) curso(os) que deseja fazer</option>
-            <option value="1" data-nome="Introdução a Power BI">Introdução a Power BI</option>
-            <option value="2" data-nome="Fundamentos de Web3">Fundamentos de Web3</option>
-            <option value="3" data-nome="Boas Práticas em SQL">Boas Práticas em SQL</option>
+            <% cursos.forEach(function(curso) { %>
+                <option data-valor="<%= curso.valor %>">
+                    <%= curso.nome %> - <%= curso.valor %>
+                </option>
+                <% }); %>
         </select>
-        <button type="button" onclick="adicionarCurso()">Adicionar Curso</button>
-        <ul id="cursosSelecionados"></ul> 
+        <button type="button" id="adicionarCurso">Adicionar Curso</button>
 
-        -->
+        <h2>Cursos Selecionados:</h2>
+        <ul id="listaCursos"></ul>
 
-        <button type="submit">Fazer inscrição</button>
+        <h2>Valor Total:</h2>
+        <p id="valorTotal">R$0,00</p>
     </form>
-
-
 
     <!-- JavaScript BootStrap-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
@@ -93,6 +88,7 @@
 
     <!-- JavaScript navbar-->
     <script src="/javascript/navbar.js"></script>
+    <script src="/javascript/somador.js"></script>
 
 </body>
 
