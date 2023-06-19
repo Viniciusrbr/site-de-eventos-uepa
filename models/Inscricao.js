@@ -15,7 +15,16 @@ const Post = db.sequelize.define('inscritos', {
     },
     modalidade: {
         type: db.Sequelize.STRING
-    }
+    },
+    cursos: {
+        type: db.Sequelize.STRING
+    },
+    valor: {
+        type: db.Sequelize.STRING
+    },
+    pagamento: {
+        type: db.Sequelize.STRING
+    },
 });
 
 //Post.sync({force: true});

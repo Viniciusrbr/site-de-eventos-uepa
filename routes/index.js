@@ -27,7 +27,10 @@ router.post('/inscricoes', function (req, res) {
     cracha: req.body.cracha,
     cpf: req.body.cpf,
     email: req.body.email,
-    modalidade: req.body.modalidade
+    modalidade: req.body.modalidade,
+    cursos: req.body.cursos,
+    valor: req.body.valor,
+    pagamento: req.body.pagamento
   })
     .then(function () {
       res.redirect('/');

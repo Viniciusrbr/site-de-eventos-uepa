@@ -75,10 +75,30 @@
         <button type="button" id="adicionarCurso">Adicionar Curso</button>
 
         <h2>Cursos Selecionados:</h2>
-        <ul id="listaCursos"></ul>
+        <ul id="listaCursos" name="cursos"></ul>
 
-        <h2>Valor Total:</h2>
-        <p id="valorTotal">R$0,00</p>
+        <h2>Valor Total: <p id="valorTotal" name="pagamento">R$0,00</p>
+        </h2>
+
+        <!--pix and card -->
+        <h2>Forma de pagamento:</h2>
+
+        <div class="pagamentos">
+            <input type="radio" id="pix" name="pagamento" value="pix" onchange="mostrarCampoPix()">
+            <label for="pix">PIX</label>
+
+            <input type="radio" id="presencial" name="pagamento" value="presencial" onchange="ocultarCampoPix()">
+            <label for="presencial">Presencialmente</label>
+        </div>
+
+        <div id="campoPix" style="display: none;">
+            <img src="/imgs/qrcode.png" alt="Imagem" class="qrcode">
+            <p>Sua inscrição estará confirmada logo após a realização do pagamento via PIX.</p>
+        </div>
+
+
+
+        <button type="submit">Enviar</button>
     </form>
 
     <!-- JavaScript BootStrap-->
@@ -88,7 +108,7 @@
 
     <!-- JavaScript navbar-->
     <script src="/javascript/navbar.js"></script>
-    <script src="/javascript/somador.js"></script>
+    <script src="/javascript/inscricao.js"></script>
 
 </body>
 

@@ -47,3 +47,13 @@ document.addEventListener('DOMContentLoaded', function () {
         valorTotal.textContent = 'R$' + somaValores.toFixed(2);
     });
 });
+
+function mostrarCampoPix() {
+    var campoPix = document.getElementById("campoPix");
+    campoPix.style.display = "block";
+}
+
+function ocultarCampoPix() {
+    var campoPix = document.getElementById("campoPix");
+    campoPix.style.display = "none";
+}
