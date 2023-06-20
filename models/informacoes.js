@@ -1,6 +1,9 @@
 const db = require('./db');
 
 const Informacoes = db.sequelize.define('informacoes', {
+  sigla: {
+    type: db.Sequelize.STRING
+  },
   titulo: {
     type: db.Sequelize.STRING
   },

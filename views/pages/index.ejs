@@ -30,7 +30,7 @@
 
     <!-- Header - navbar -->
     <header id="header">
-        <a id="logo" href="">CITRA</a>
+        <a id="logo" href=""><%= informacao.sigla %></a>
         <nav id="nav">
             <button aria-label="Abrir Menu" id="btn-mobile" aria-haspopup="true" aria-controls="menu"
                 aria-expanded="false">Menu
@@ -53,7 +53,8 @@
     <section id="hero">
         <div class="hero-container">
             <div>
-                <h1>OLA! BEM VINDO AO <%= informacao.titulo %>
+                <h2>OLA! BEM VINDO À</h2>
+                <h1><%= informacao.titulo %>
                 </h1>
                 <h2>
                     <%= informacao.descricao %>
