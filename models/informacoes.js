@@ -1,6 +1,9 @@
 const db = require('./db');
 
 const Informacoes = db.sequelize.define('informacoes', {
+  sigla: {
+    type: db.Sequelize.STRING
+  },
   titulo: {
     type: db.Sequelize.STRING
   },
@@ -18,6 +21,6 @@ const Informacoes = db.sequelize.define('informacoes', {
   }
 });
 
-//Informacoes.sync({force: true});
+Informacoes.sync({force: true});
 
 module.exports = Informacoes;
