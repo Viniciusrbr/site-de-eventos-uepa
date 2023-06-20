@@ -12,7 +12,7 @@ const Curso = db.sequelize.define('cursos', {
     }
 })
 
-Curso.sync({force: true});
+//Curso.sync({force: true});
 
 module.exports = Curso;
 
