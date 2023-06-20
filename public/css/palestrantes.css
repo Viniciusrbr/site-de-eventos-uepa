@@ -3,7 +3,7 @@
 }
 
 section{
-    margin-top: 150px;
+    margin-top: 26px;
 }
 
 .palestrantes{
@@ -31,14 +31,19 @@ section{
     text-transform: uppercase;
 }
 
+
 .card-text a{
-    color: #0dbef4;
+    background-color: rgb(0, 114, 66);
+    color: #ffffff;
     text-decoration: none;
+    padding: 7px 7px;
+    border-radius: 6px;
 }
 
 .card-text a:hover{
-    color: #3d6e7d;
+    color: #ffffff;
     text-decoration: none;
+    background-color: rgb(0, 158, 92);
 }
 
 h5{
