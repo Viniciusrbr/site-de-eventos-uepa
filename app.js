@@ -1,8 +1,19 @@
-// Importe as dependências
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const path = require('path');
+const multer = require('multer');
+
+// Configurações do Multer
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'uploads/'); // Pasta onde os arquivos serão salvos
+  },
+  filename: function (req, file, cb) {
+    cb(null, Date.now() + '-' + file.originalname); // Nome do arquivo salvo
+  }
+});
+
 
 // Importe as rotas
 const routes = require('./routes/index');

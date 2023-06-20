@@ -6,6 +6,21 @@ const Info = require('../models/informacoes');
 const artigo = require('../models/artigos');
 const Curso = require('../models/cursos');
 
+const multer = require('multer');
+
+// Configurações do Multer
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'uploads/'); // Pasta onde os arquivos serão salvos
+  },
+  filename: function (req, file, cb) {
+    cb(null, Date.now() + '-' + file.originalname); // Nome do arquivo salvo
+  }
+});
+
+const upload = multer({ storage: storage });
+
+
 // Rota '/'
 router.get('/', function (req, res) {
   Info.findByPk(1).then(function (informacao) {
@@ -45,8 +60,14 @@ router.get('/artigos.html', function (req, res) {
   res.sendFile(path.join(__dirname, '../views/pages', 'artigos.html'));
 });
 
-router.post('/artigosenviados', function (req, res) {
+router.post('/artigosenviados', upload.single('arquivo'), function (req, res) {
+  // Aqui você pode acessar os dados do formulário, incluindo o arquivo salvo
+  console.log(req.body);
 
+  // Aqui você pode acessar as informações do arquivo salvo
+  console.log(req.file);
+
+  // Restante do seu código para salvar as informações no banco de dados
   artigo.create({
     titulo: req.body.titulo,
     resumo: req.body.resumo,
@@ -54,7 +75,7 @@ router.post('/artigosenviados', function (req, res) {
     autores: req.body.autores,
     afiliacao: req.body.afiliacao,
     categoria: req.body.categoria,
-    arquivo: req.body.arquivo
+    arquivo: req.file.filename // Use req.file.filename para obter o nome do arquivo salvo
   })
     .then(function () {
       res.redirect('/');
