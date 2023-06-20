@@ -25,6 +25,6 @@ const artigos = db.sequelize.define('artigos', {
 
 });
 
-//artigos.sync({force: true});
+artigos.sync({force: true});
 
 module.exports = artigos;
