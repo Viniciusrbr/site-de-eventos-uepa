@@ -74,6 +74,7 @@ router.get('/admin', function (req, res) {
 // Rota POST '/admin'
 router.post('/admin', function (req, res) {
   // Obtenha os dados enviados pelo formulário
+  var sigla = req.body.sigla;
   var titulo = req.body.titulo;
   var descricao = req.body.descricao;
   var local = req.body.local;
@@ -84,6 +85,7 @@ router.post('/admin', function (req, res) {
   Info.findByPk(1).then(function (informacao) {
     informacao
       .update({
+        sigla: sigla,
         titulo: titulo,
         descricao: descricao,
         local: local,
