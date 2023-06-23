@@ -16,6 +16,10 @@
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/inscricao.css">
 
+    <!-- biblioteca para gerar pdf-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.66/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.66/vfs_fonts.js"></script>
+
 </head>
 
 <body>
@@ -73,6 +77,8 @@
                 <% }); %>
         </select>
         <button type="button" id="adicionarCurso">Adicionar Curso</button>
+        
+
 
         <h2>Cursos Selecionados:</h2>
         <ul id="listaCursos" name="cursos"></ul>
@@ -99,6 +105,8 @@
 
 
         <button type="submit">Enviar</button>
+        <button onclick="gerarComprovantePDF()">Gerar Comprovante</button>
+        
     </form>
 
     <!-- JavaScript BootStrap-->
@@ -110,6 +118,41 @@
     <script src="/javascript/navbar.js"></script>
     <script src="/javascript/inscricao.js"></script>
 
+    <!--JavaScript gerar comprovante de inscrição-->
+    <script>
+        function gerarComprovantePDF() {
+            var nome = document.getElementById('nome').value;
+            var nomeCracha = document.getElementById('cracha').value;
+            var cpf = document.getElementById('cpf').value;
+            var email = document.getElementById('email').value;
+            var modalidade = document.getElementById('modalidade').value;
+            var cursos = document.getElementById('cursos').value;
+            var valor = document.getElementById('pagamento').value;
+
+            var docDefinition = {
+                content: [
+                { text: 'Comprovante de Inscrição', style: 'header' },
+                { text: 'Nome: ' + nome },
+                { text: 'Nome no Crachá: ' + nomeCracha },
+                { text: 'CPF: ' + cpf },
+                { text: 'Email: ' + email },
+                { text: 'Modalidade: ' +  modalidade },
+                { text: 'Cursos: ' + cursos },
+                { text: 'Valor: ' + valor }
+                ],
+                styles: {
+                header: {
+                    fontSize: 18,
+                    bold: true,
+                    margin: [0, 0, 0, 10] // margem: [cima, esquerda, baixo, direita]
+                }
+                }
+            };
+
+            pdfMake.createPdf(docDefinition).download('comprovante.pdf');
+        }
+
+    </script>
 </body>
 
 </html>
