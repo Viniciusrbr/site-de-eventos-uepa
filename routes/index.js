@@ -136,5 +136,9 @@ router.get('/noticias.html', function (req, res) {
   res.sendFile(path.join(__dirname, '../views/pages', 'noticias.html'));
 });
 
+router.get('/noticiaPagina.html', function (req, res) {
+  res.sendFile(path.join(__dirname, '../views/pages', 'noticiaPagina.html'));
+});
+
 
 module.exports = router;

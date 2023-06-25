@@ -21,6 +21,6 @@ const Informacoes = db.sequelize.define('informacoes', {
   }
 });
 
-Informacoes.sync({force: true});
+//Informacoes.sync({force: true});
 
 module.exports = Informacoes;
