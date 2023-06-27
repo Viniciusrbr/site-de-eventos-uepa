@@ -48,7 +48,7 @@ router.post('/inscricoes', function (req, res) {
     pagamento: req.body.pagamento
   })
     .then(function () {
-      res.redirect('/inscricao');
+      res.redirect('/inscricao'); //ao realizar a inscricao, manter na pagina de inscricao sem ir para a index
     })
     .catch(function (erro) {
       res.send('Erro: Inscrição não realizada com sucesso!' + erro);

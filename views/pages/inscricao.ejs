@@ -90,10 +90,10 @@
         <h2>Forma de pagamento:</h2>
 
         <div class="pagamentos">
-            <input type="radio" id="pix" name="pagamento" value="pix" onchange="mostrarCampoPix()">
+            <input type="radio" id="pix" required name="pagamento" value="pix" onchange="mostrarCampoPix()">
             <label for="pix">PIX</label>
 
-            <input type="radio" id="presencial" name="pagamento" value="presencial" onchange="ocultarCampoPix()">
+            <input type="radio" id="presencial" required name="pagamento" value="presencial" onchange="ocultarCampoPix()">
             <label for="presencial">Presencialmente</label>
         </div>
 
@@ -102,11 +102,7 @@
             <p>Sua inscrição estará confirmada logo após a realização do pagamento via PIX.</p>
         </div>
 
-
-
-        <button type="submit">Enviar</button>
-
-        <button  onclick="gerarComprovantePDF()" id="BTcomprovante">Gerar Comprovante</button>
+        <button onclick="gerarComprovantePDF()" type="submit" >Enviar</button>
         
     </form>
 
@@ -122,6 +118,7 @@
     <!--JavaScript gerar comprovante de inscrição-->
     <script>
         function gerarComprovantePDF() {
+            //pegando os elementos inseridos no forms
             var nome = document.getElementById('nome').value;
             var nomeCracha = document.getElementById('cracha').value;
             var cpf = document.getElementById('cpf').value;
@@ -132,6 +129,7 @@
             var cursoValor = cursoSelecionado.getAttribute('data-valor');
             var cursoTexto = cursoSelecionado.getAttribute('data-texto');
 
+            //mostrando cada elemento de forma estruturada no pdf
             var docDefinition = {
                 content: [
                 { text: 'Comprovante de Inscrição', style: 'header' },
@@ -152,11 +150,16 @@
                 }
             };
 
+            //pegando todo os elemetos do formulario
             var formulario = document.getElementById('formulario');
-            var camposPreenchidos = formulario.checkValidity();
-            if (camposPreenchidos) {
+            var camposPreenchidos = formulario.checkValidity(); //metodo para checar se os campos do forms foram preenchidos
+
+            //condição
+            if (camposPreenchidos) { //caso os campos foram preenchidos alertar que a inscricao foi realizada e gerar comprovante pdf
+                alert('Inscrição realizada com sucesso! Clique em OK para gerar o Comprovante de Inscrição.');
                 pdfMake.createPdf(docDefinition).download('comprovante.pdf');
-            } else {
+                
+            } else { //caso os campos nao foram preenchidos da forma correta, alertar a mensagem a baixo:
                 // Lógica para lidar com campos não preenchidos
                 alert('Por favor, preencha todos os campos obrigatórios.');
             }
