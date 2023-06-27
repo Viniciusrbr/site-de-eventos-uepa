@@ -10,6 +10,9 @@ const Informacoes = db.sequelize.define('informacoes', {
   descricao: {
     type: db.Sequelize.TEXT
   },
+  sobre: {
+    type: db.Sequelize.STRING
+  },
   local: {
     type: db.Sequelize.STRING
   },

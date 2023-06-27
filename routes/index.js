@@ -98,6 +98,7 @@ router.post('/admin', function (req, res) {
   var sigla = req.body.sigla;
   var titulo = req.body.titulo;
   var descricao = req.body.descricao;
+  var sobre = req.body.sobre;
   var local = req.body.local;
   var data_inicio = req.body.data_inicio;
   var data_fim = req.body.data_fim;
@@ -109,6 +110,7 @@ router.post('/admin', function (req, res) {
         sigla: sigla,
         titulo: titulo,
         descricao: descricao,
+        sobre: sobre,
         local: local,
         data_inicio: data_inicio,
         data_fim: data_fim

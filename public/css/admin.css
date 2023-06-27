@@ -9,11 +9,11 @@ body {
 
 .informacoes {
     background-color: rgba(248, 248, 248, 0.897);
-    text-align: center;
     margin-right: 50px;
     width: 430px;
     overflow: hidden;
     border-radius: 8px;
+    padding-left: 8px;
 }
 #formulario{
     background-color: rgba(185, 185, 185, 0.897);

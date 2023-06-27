@@ -22,23 +22,26 @@
         <ul>
             <% informacoes.forEach(function(informacao) { %>
                 <li>
-                    Sigla: <%= informacao.sigla %>
+                    <strong>Sigla</strong>: <%= informacao.sigla %>
                 </li>
                 <li>
-                    Nome: <%= informacao.titulo %>
+                    <strong>Nome</strong>: <%= informacao.titulo %>
                 </li>
                 <li>
-                    Descrição: <%= informacao.descricao %>
+                    <strong>Descrição</strong>: <%= informacao.descricao %>
                 </li>
                 <li>
-                    Local: <%= informacao.local %>
+                    <strong>Sobre o Evento</strong>: <%= informacao.sobre %>
                 </li>
                 <li>
-                    Data de Inicio: <%= informacao.data_inicio.toLocaleDateString('pt-br', { month: 'long' ,
+                    <strong>Local</strong>: <%= informacao.local %>
+                </li>
+                <li>
+                    <strong>Data de Inicio</strong>: <%= informacao.data_inicio.toLocaleDateString('pt-br', { month: 'long' ,
                         day: 'numeric' , year: 'numeric' }) %>
                 </li>
                 <li>
-                    Data de Termino: <%= informacao.data_fim.toLocaleDateString('pt-br', { month: 'long' ,
+                    <strong>Data de Termino</strong>: <%= informacao.data_fim.toLocaleDateString('pt-br', { month: 'long' ,
                         day: 'numeric' , year: 'numeric' }) %>
                 </li>
                 <% }) %>
@@ -57,7 +60,10 @@
         <input type="text" id="titulo" required name="titulo">
 
         <label for="descricao">Descrição:</label>
-        <textarea id="descricao" required name="descricao" rows="4" cols="50"></textarea>
+        <textarea id="descricao" required name="descricao" rows="2" cols="50"></textarea>
+
+        <label for="sobre">Sobre o Evento:</label>
+        <textarea id="sobre" required name="sobre" rows="4" cols="50"></textarea>
 
         <label for="local">Local:</label>
         <input type="text" id="local" required name="local">
