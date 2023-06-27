@@ -49,29 +49,29 @@
         <h1>Formulário de Inscrição</h1>
 
         <label for="nome">Nome completo:</label>
-        <input type="text" id="nome" name="nome">
+        <input type="text" id="nome" required name="nome">
 
         <label for="cracha">Nome no crachá:</label>
-        <input type="text" id="cracha" name="cracha">
+        <input type="text" id="cracha" required name="cracha">
 
         <label for="cpf">CPF:</label>
-        <input type="text" id="cpf" name="cpf">
+        <input type="text" id="cpf" required name="cpf">
 
         <label for="email">E-mail:</label>
-        <input type="email" id="email" name="email">
+        <input type="email" id="email" required name="email">
 
         <label for="modalidade">Modalidade:</label>
-        <select id="modalidade" name="modalidade" onchange="mostrarComprovante()">
+        <select id="modalidade" required name="modalidade" onchange="mostrarComprovante()">
             <option value="">Selecione uma modalidade</option>
             <option value="publico-geral">Público geral</option>
             <option value="estudante">Estudante</option>
         </select>
 
         <label for="curso">Cursos:</label>
-        <select id="curso" name="curso">
+        <select id="curso" required name="curso">
             <option selected>Selecione o(os) curso(os) que deseja fazer</option>
             <% cursos.forEach(function(curso) { %>
-                <option data-valor="<%= curso.valor %>">
+                <option data-valor="<%= curso.valor %>" data-texto="<%= curso.nome %>">
                     <%= curso.nome %> - <%= curso.valor %>
                 </option>
                 <% }); %>
@@ -105,7 +105,8 @@
 
 
         <button type="submit">Enviar</button>
-        <button onclick="gerarComprovantePDF()">Gerar Comprovante</button>
+
+        <button  onclick="gerarComprovantePDF()" id="BTcomprovante">Gerar Comprovante</button>
         
     </form>
 
@@ -126,8 +127,10 @@
             var cpf = document.getElementById('cpf').value;
             var email = document.getElementById('email').value;
             var modalidade = document.getElementById('modalidade').value;
-            var cursos = document.getElementById('cursos').value;
-            var valor = document.getElementById('pagamento').value;
+            var selectCurso = document.getElementById('curso');
+            var cursoSelecionado = selectCurso.options[selectCurso.selectedIndex];
+            var cursoValor = cursoSelecionado.getAttribute('data-valor');
+            var cursoTexto = cursoSelecionado.getAttribute('data-texto');
 
             var docDefinition = {
                 content: [
@@ -137,8 +140,8 @@
                 { text: 'CPF: ' + cpf },
                 { text: 'Email: ' + email },
                 { text: 'Modalidade: ' +  modalidade },
-                { text: 'Cursos: ' + cursos },
-                { text: 'Valor: ' + valor }
+                { text: 'Cursos: ' + cursoTexto },
+                { text: 'Valor: ' + cursoValor }
                 ],
                 styles: {
                 header: {
@@ -149,7 +152,15 @@
                 }
             };
 
-            pdfMake.createPdf(docDefinition).download('comprovante.pdf');
+            var formulario = document.getElementById('formulario');
+            var camposPreenchidos = formulario.checkValidity();
+            if (camposPreenchidos) {
+                pdfMake.createPdf(docDefinition).download('comprovante.pdf');
+            } else {
+                // Lógica para lidar com campos não preenchidos
+                alert('Por favor, preencha todos os campos obrigatórios.');
+            }
+        
         }
 
     </script>
