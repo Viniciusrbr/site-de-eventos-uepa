@@ -1,10 +1,30 @@
 body{
-    background-color: #f5f5f5;
+    background-image: url('../imgs/floresta-background.jpeg');
+    background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.corpo{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #f2f2f2e1;
+    margin: auto;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
 }
 
 .textos{
+    width: 500px;
+    background-color: #f2f2f2d7;
     color: #000000;
-    margin: 50px;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    border-radius: 10px;
 }
 
 form, h1, p{
@@ -18,7 +38,7 @@ form, h1, p{
 
 
 .mb-3{
-    width: 50%;
+    width: 90%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -26,11 +46,25 @@ form, h1, p{
 }
 
 label{
+    font-weight: bold;
+    color: #000000;
     width: 30%;
     height: 100%;
-    display: flex;
+    display: block;
     justify-content: center;
     align-items: center;
 }
+
+button[type="submit"] {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 50%;
+  }
+
 
 

@@ -29,7 +29,7 @@
             </button>
             <ul id="menu" role="menu">
                 <li><a href="/">Inicio</a></li>
-                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="/#sobre">Sobre</a></li>
                 <li><a href="/programacao.html">Programação</a></li>
                 <li><a href="/palestrantes.html">Palestrantes</a></li>
                 <li><a href="/inscricao">Inscrição</a></li>
@@ -42,57 +42,47 @@
 
     <div class="textos">
         <h1>Submissão de Artigos</h1>
-        <p>Submeta seu trabalho para ser avaliado</p>
+        <p>Envie seu trabalho para ser avaliado</p>
     </div>
 
-    <form id="formulario" action="/artigosenviados" method="post" enctype="multipart/form-data">
-
-        <div class="mb-3">
-            <label for="titulo" class="form-label">Título:</label>
-            <input type="text" class="form-control" id="titulo" name="titulo" required>
-        </div>
-
-        <div class="mb-3">
-            <label for="resumo" class="form-label">Resumo:</label>
-            <textarea class="form-control" id="resumo" name="resumo" rows="4" cols="50" required></textarea>
-
-        </div>
-
-        <div class="mb-3">
-            <label for="palavras_chave" class="form-label">Palavras-chave:</label>
-            <input type="text" class="form-control" id="palavras_chave" name="palavras_chave" required>
-
-        </div>
-
-        <div class="mb-3">
-            <label for="autores" class="form-label">Autores:</label>
-            <input type="text" class="form-control" id="autores" name="autores" required>
-
-        </div>
-
-        <div class="mb-3">
-            <label for="afiliacao" class="form-label">Afiliação:</label>
-            <input type="text" class="form-control" id="afiliacao" name="afiliacao" required>
-        </div>
-
-        <div class="mb-3">
-            <label for="categoria" class="form-label">Categoria:</label>
-            <select class="form-control" id="categoria" name="categoria" required>
-                <option value="">Selecione uma categoria</option>
-                <option value="Categoria 1">Categoria 1</option>
-                <option value="Categoria 2">Categoria 2</option>
-                <option value="Categoria 3">Categoria 3</option>
-            </select>
-
-        </div>
-
-        <div class="mb-3">
-            <label for="arquivo" class="form-label">Arquivo (PDF):</label>
-            <input type="file" class="form-control" id="arquivo" name="arquivo" accept="application/pdf" >
-        </div>
-
-        <button type="submit" class="btn btn-primary">Enviar</button>
-    </form>
+    <div class="corpo">
+        <form id="formulario" action="/artigosenviados" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="titulo" class="form-label">Título:</label>
+                <input type="text" class="form-control" id="titulo" name="titulo" required>
+            </div>
+            <div class="mb-3">
+                <label for="resumo" class="form-label">Resumo:</label>
+                <textarea class="form-control" id="resumo" name="resumo" rows="4" cols="50" required></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="palavras_chave" class="form-label">Palavras-chave:</label>
+                <input type="text" class="form-control" id="palavras_chave" name="palavras_chave" required>
+            </div>
+            <div class="mb-3">
+                <label for="autores" class="form-label">Autores:</label>
+                <input type="text" class="form-control" id="autores" name="autores" required>
+            </div>
+            <div class="mb-3">
+                <label for="afiliacao" class="form-label">Afiliação:</label>
+                <input type="text" class="form-control" id="afiliacao" name="afiliacao" required>
+            </div>
+            <div class="mb-3">
+                <label for="categoria" class="form-label">Categoria:</label>
+                <select class="form-control" id="categoria" name="categoria" required>
+                    <option value="">Selecione uma categoria</option>
+                    <option value="Categoria 1">Categoria 1</option>
+                    <option value="Categoria 2">Categoria 2</option>
+                    <option value="Categoria 3">Categoria 3</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="arquivo" class="form-label">Arquivo (PDF):</label>
+                <input type="file" class="form-control" id="arquivo" name="arquivo" accept="application/pdf" >
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </div>
 
 
 
