@@ -12,6 +12,20 @@
     margin-bottom: 15px;
     overflow: hidden;
 }
+.pic{
+    overflow: hidden;
+}
+
+.pic {
+    -webkit-transition: -webkit-transform .5s ease;
+   transition: transform .5s ease;
+}
+
+.pic:hover {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
 .pic:hover{
     box-shadow: 5px 5px 15px 10px;
 }
